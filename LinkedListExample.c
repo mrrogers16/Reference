@@ -29,14 +29,14 @@ node_t *create_new_node(int value)
     result->next = NULL;
     return result;
 }
-
+//insert node at top of list(head)
 node_t *insert_at_head(node_t **head, node_t *node_to_insert)
 {
     node_to_insert->next = *head;
     *head = node_to_insert;
     return node_to_insert;
 }
-
+//locate node
 node_t *find_node(node_t *head, int value)
 {
     node_t *tmp = head;
@@ -51,7 +51,7 @@ node_t *find_node(node_t *head, int value)
 
     return NULL;
 }
-
+//Inserts node after specified node
 void insert_after_node(node_t *node_to_insert_after, node_t* new_node)
 {
     new_node->next = node_to_insert_after->next;
