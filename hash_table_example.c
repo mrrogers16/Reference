@@ -1,6 +1,5 @@
-#include <stdio.h>
+
 #include <stdlib.h>
-#include <string.h>
 #include <stdbool.h>
 #define TABLE_SIZE 10
 #define MAX_NAME 256
@@ -39,7 +38,9 @@ void init_hash_table()
 bool hash_table_insert(person *p)
 {
     if (p == NULL)
+    {
         return false;
+    }
     int index = hash(p->name);
     for (int i = 0; i < TABLE_SIZE; i++)
     {
@@ -56,20 +57,19 @@ bool hash_table_insert(person *p)
 void print_table()
 {
     printf("Start\n");
-    
+
     for (int i = 0; i < TABLE_SIZE; i++)
     {
         if (hash_table[i] == NULL)
         {
             printf("\t%i\t---\n", i);
         }
-        else if(hash_table[i] == DELETED_NODE)
+        else if (hash_table[i] == DELETED_NODE)
         {
             printf("\t%i\t---<deleted>\n", i);
-            
         }
         else
-        {    
+        {
             printf("\t%i\t%s\n", i, hash_table[i]->name);
         }
     }
@@ -132,14 +132,14 @@ int main()
     person Dick = {.name = "Dick", .age = 77};
     person Adrean = {.name = "Adrean", .age = 23};
     person Grandma = {.name = "Grandma", .age = 88};
-   
+
     hash_table_insert(&Mickey);
     hash_table_insert(&Sara);
     hash_table_insert(&Karla);
     hash_table_insert(&Dick);
     hash_table_insert(&Adrean);
     hash_table_insert(&Grandma);
-   
+
     person *tmp = hash_table_lookup("Sara");
     if (tmp == NULL)
     {
@@ -149,7 +149,7 @@ int main()
     {
         printf("Found %s.\n", tmp->name);
     }
-    printf("Has been deleted %s",hash_table_delete("Mickey"));
+    printf("Has been deleted %s", hash_table_delete("Mickey"));
     print_table();
     // printf("Jacob => %u\n", hash("Jacob"));
     // printf("Sara => %u\n", hash("Sara"));

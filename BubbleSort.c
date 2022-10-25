@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <assert.h>
-
+//O(n^2)
 void sort(int arr[], int size)
 {
     for (int j = 0; j < size - 1; j++)

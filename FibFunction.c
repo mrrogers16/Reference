@@ -15,3 +15,8 @@ void fibSeries(int k)
     }
     printf("The %dth number in the fib sequence is: %d\n", k, n2);
 }
+int main()
+{
+    fibSeries(100000);
+    return 0;
+}
