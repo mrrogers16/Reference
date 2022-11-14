@@ -7,7 +7,7 @@ typedef struct mygraph
 {
     int numnodes;
     bool **edges;
-};
+}graph;
 
 graph *create_graph(int numnodes)
 {
@@ -75,7 +75,7 @@ bool add_edge(graph *g, unsigned int from_node, unsigned int to_node)
     assert(g != NULL);
     assert(from_node < g->numnodes);
     assert(to_node < g->numnodes);
-    
+
     if (has_edge(g, from_node, to_node))
     {
         return false;
