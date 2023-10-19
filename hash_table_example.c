@@ -149,9 +149,8 @@ int main()
     {
         printf("Found %s.\n", tmp->name);
     }
-    printf("Has been deleted %s", hash_table_delete("Mickey"));
+    printf("Has been deleted %s", hash_table_delete("kyle"));
     print_table();
-
 
     return 0;
 }
