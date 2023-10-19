@@ -126,21 +126,21 @@ person *hash_table_delete(char *name)
 int main()
 {
     init_hash_table();
-    person Mickey = {.name = "Mickey", .age = 29};
-    person Sara = {.name = "Sara", .age = 25};
-    person Karla = {.name = "Karla", .age = 57};
-    person Dick = {.name = "Dick", .age = 77};
-    person Adrean = {.name = "Adrean", .age = 23};
-    person Grandma = {.name = "Grandma", .age = 88};
+    person bill = {.name = "bill", .age = 29};
+    person bert = {.name = "bert", .age = 25};
+    person barthert = {.name = "barthert", .age = 57};
+    person bobbert = {.name = "bobbert", .age = 77};
+    person bartrom = {.name = "bartrom", .age = 23};
+    person kyle = {.name = "kyle", .age = 88};
 
-    hash_table_insert(&Mickey);
-    hash_table_insert(&Sara);
-    hash_table_insert(&Karla);
-    hash_table_insert(&Dick);
-    hash_table_insert(&Adrean);
-    hash_table_insert(&Grandma);
+    hash_table_insert(&bill);
+    hash_table_insert(&bert);
+    hash_table_insert(&barthert);
+    hash_table_insert(&bobbert);
+    hash_table_insert(&bartrom);
+    hash_table_insert(&kyle);
 
-    person *tmp = hash_table_lookup("Sara");
+    person *tmp = hash_table_lookup("bill");
     if (tmp == NULL)
     {
         printf("Not Found\n");
@@ -151,13 +151,7 @@ int main()
     }
     printf("Has been deleted %s", hash_table_delete("Mickey"));
     print_table();
-    // printf("Jacob => %u\n", hash("Jacob"));
-    // printf("Sara => %u\n", hash("Sara"));
-    // printf("Mick => %u\n", hash("Mick"));
-    // printf("Adrean => %u\n", hash("Adrean"));
-    // printf("Dad => %u\n", hash("Dad"));
-    // printf("Mom => %u\n", hash("Mom"));
-    // printf("Grandma => %u\n", hash("Grandma"));
+
 
     return 0;
 }
